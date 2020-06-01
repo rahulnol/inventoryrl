@@ -1,0 +1,73 @@
+.mcCheckBoxRecollect {
+    margin-left: 243px
+}
+
+.mcInputAssignedHardware {
+    border: 1px solid white;
+}
+
+input[placeholder] {
+    color: black;
+}
+
+.mcMainPageDiv {
+    border: 0px solid orange;
+    margin-top: 30px;
+}
+
+.mcSelectFilter {
+    height: 38px;
+    width: 180px;
+    border-radius: 5px;
+    margin-left: -15px;
+    padding: 4px;
+}
+
+.mcInputElement {
+    width: 332px;
+    border-radius: 10px;
+    margin-top: 3px;
+    height: 34px;
+}
+
+::placeholder {
+    color: blue;
+    font-size: 20px;
+    text-align: center;
+}
+
+.mcFilterDiv {
+    margin-top: 40px;
+    margin-bottom: 60px;
+    border: 0px solid orange;
+    padding-left: 12px;
+}
+
+.table-striped td {
+    color: blue;
+}
+
+.miInputElementSearch1{
+    width: 419px;
+}
+
+::placeholder{
+    font-size: 15px;
+}
+
+/*.btn-primary-small {*/
+/*display: block;*/
+/*text-decoration: none;*/
+/*height: 36px;*/
+/*line-height: 18px;*/
+/*padding: 8px 18px;*/
+/*font-size: 1.3rem;*/
+/*background-color: #006FC8;*/
+/*border: 1px solid #006FC8;*/
+/*border-radius: 4px;*/
+/*color: #FFFFFF;*/
+/*min-width: 60px;*/
+/*text-align: center;*/
+/*font-weight: 400;*/
+/*text-transform: uppercase;*/
+/*}*/

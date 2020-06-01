@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title %}
+    Dashboard
+{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'sidebar/css/style.css' %}">
+{% endblock %}
+
+
+{% block content %}
+    {% include 'navbar.html' %}
+    <div class="row" style="    margin-right: 0px;">
+        <div class="col-md-1">
+            {% include 'sidebar.html' %}
+        </div>
+        <div class="col-md-11" style="overflow-y: auto;height: 550px;">
+            {% block sub_content %}{% endblock %}
+        </div>
+    </div>
+
+    {#     {% include 'navbar.html' %}#}
+    {#    {% include 'sidebar.html' %}#}
+    {#    {% block sub_content %}{% endblock %}#}
+    {#    {% include 'footer.html' %}#}
+    {#    {% include 'modal/delete_confirmation.html' %}#}
+    {#    {% include 'npuser/profile.html' %}#}
+
+
+
+    {#    {% include 'navbar.html' %}#}
+    {#    {% include 'sidebar.html' %}#}
+    {#    {% block sub_content %}{% endblock %}#}
+    {#    {% include 'footer.html' %}#}
+    {#    {% include 'modal/delete_confirmation.html' %}#}
+    {#    {% include 'npuser/profile.html' %}#}
+
+
+{% endblock %}
+
+
+{% block extra_js %}
+    <script src="{% static 'assets/js/common.js' %}"></script>
+    <script src="{% static 'sidebar/js/popper.js' %}"></script>
+    <script src="{% static 'sidebar/js/main.js' %}"></script>
+{% endblock %}

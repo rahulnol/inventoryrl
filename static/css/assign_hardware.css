@@ -1,0 +1,13 @@
+.miInputElementSearch {
+    padding-left: 27px;
+    border: 1px solid white;
+    height: 30px;
+    width: 419px;
+}
+::placeholder{
+    font-size: 12px;
+}
+
+.miInputElementSearch1{
+    width: 419px;
+}

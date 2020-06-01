@@ -1,0 +1,21 @@
+.mcMainPageDiv {
+    border: 0px solid orange;
+    margin-top: 30px;
+}
+.miAddLocationAnchorTag{
+    float: right;
+}
+
+.mcSelectFilter {
+    height: 38px;
+    width: 130px;
+    border-radius: 5px;
+    margin-left: -15px;
+    text-align: center;
+    padding: 4px;
+}
+
+.mcActionBtnDiv{
+    margin-bottom: 35px;
+    margin-top: 50px;
+}

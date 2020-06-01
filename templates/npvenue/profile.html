@@ -1,0 +1,240 @@
+{% extends 'base_dashboard.html' %}
+{% load staticfiles %}
+{% block sub_content %}
+    {% load tags %}
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <main id="content" role="main">
+        <!-- Hero Section -->
+        <div class="gradient-half-warning-v3" style="border: 0px solid blue">
+            <div class="container-fluid space-2"
+                 style="background-image: linear-gradient(150deg, #2d1582 0%, #19a0ff 100%);border: 1px solid yellow">
+                <div class="row justify-content-md-between ml-6 mr-8" style="border: 0px solid orange">
+                    <!-- Item Image -->
+                    <div class="col-md-6 mb-7 mb-md-0" style="border: 0px solid black;">
+                        <div class="js-slick-carousel u-slick"
+                             data-infinite="true"
+                             data-arrows-classes="u-slick__arrow-classic u-slick__arrow-centered--y rounded-circle"
+                             data-arrow-left-classes="fas fa-arrow-left u-slick__arrow-classic-inner u-slick__arrow-classic-inner--left"
+                             data-arrow-right-classes="fas fa-arrow-right u-slick__arrow-classic-inner u-slick__arrow-classic-inner--right"
+                             data-pagi-classes="text-center u-slick__pagination u-slick__pagination--white mt-7 mb-0">
+
+                            {% for v_img in venue.venue_images %}
+                                <div class="js-slide px-7 my-4">
+                                    <img class="img-fluid" src="{{ v_img.image }}" alt="Image Description">
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <!-- End Item Image -->
+                    <!-- Content -->
+                    <div class="col-md-5" style="border: 0px solid orange">
+                        <div class="row" style="border: 0px solid orange" id="miOriginalVenueDescDiv">
+                            <div class="col-md-10" style="border: 0px solid black">
+                                <div>
+                                    <h1 class="text-white font-weight-normal">{{ venue.venue_name }}</h1>
+                                    <span class="d-block h6 text-white mb-3">{{ venue.area }}</span>
+                                    <p class="text-white">{{ venue.description }}</p>
+                                </div>
+                            </div>
+                            <div class="col-md-1" style="border: 0px solid red;"
+                                 data-venuedesc="{{ venue.description }}" data-venueid="{{ venue.id }}">
+                                <a class="fas fa-edit" href="javascript:;" style="color: floralwhite"
+                                   id="miEditIconVenueDesc"></a>
+                            </div>
+
+                            <div class="col-md-1" style="border: 0px solid red;display: none;">
+                                <a class="fas fa-edit" href="javascript:;"></a>
+                            </div>
+                        </div>
+
+                        <div class="row" style="border: 0px solid orange;display: none;" id="miVenueDescEditDiv">
+                            <div class="col-md-10" style="border: 0px solid black">
+                                <div>
+                                    <h1 class="text-white font-weight-normal">{{ venue.venue_name }}</h1>
+                                    <span class="d-block h6 text-white mb-3">{{ venue.area }}</span>
+                                    {#                                    <p class="text-white">{{ venue.description }}</p>#}
+                                    <textarea id="miTextAreaEditDiv" rows="8" cols="58">
+                                    </textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-1" style="border: 0px solid red;">
+                                <a class="fa fa-times" href="javascript:;" style="color: floralwhite"
+                                   id="miCrossIconEditVenueDesc"></a>
+                            </div>
+                            <div class="col-md-1" style="border: 0px solid red;">
+                                <a class="fa fa-check" href="javascript:;" style="color: floralwhite"
+                                   id="miCheckIconEditVenueDesc"></a>
+                            </div>
+                            <div class="required-field" style="margin-left: 15px;display: none"
+                                 id="miErrorDivForTextArea">Min 20 characters are required
+                            </div>
+                            <input id="miVenueId" type="number"  hidden>
+                        </div>
+
+
+                        {#                        <div class="mb-5" style="border: 1px solid black">#}
+                        {#                            <h1 class="text-white font-weight-normal">{{ venue.venue_name }}</h1>#}
+                        {#                            <span class="d-block h6 text-white mb-3">{{ venue.area }}</span>#}
+                        {#                            <p class="text-white">{{ venue.description }}</p>#}
+                        {#                        </div>#}
+                    </div>
+                    <!-- End Content -->
+                </div>
+            </div>
+        </div>
+        <!-- End Hero Section -->
+
+        <!-- Product Details Section -->
+        <div class="container-fluid space-2 space-md-2"
+             style="background-image: linear-gradient(150deg, #ffffff 0%, #c7b2b2 100%);">
+            <div class="row ml-6 mr-8">
+                <div class="col-sm-6 col-md-5 mb-5 mb-md-0">
+                    <h2 class="h6">Working Hours</h2>
+                    <ul class="text-secondary pl-3">
+                        {% for timing in venue.venue_timing %}
+                            <li class="py-1">{{ timing.day | capfirst }}: {{ timing.time_start }}
+                                - {{ timing.time_end }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                <div class="col-sm-6 col-md-3 mb-5 mb-md-0">
+                    <h3 class="h6">Amenities</h3>
+                    <ul class="text-secondary pl-3">
+                        {% for amenities in venue.amenities %}
+                            <li class="py-1">{{ amenities.name }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                <div class="col-sm-6 col-md-4">
+                    <div class="row">
+                        <div class="mb-4 col-md-10">
+                            <h4 class="h6">Contact Information</h4>
+                            <p class="mb-0">Email: {{ venue.email }}</p>
+                            <p class="mb-0">Phone Number: {{ venue.phone }}</p>
+                            <p class="mb-0">Landline: {{ venue.landline }}</p>
+                            <p class="mb-0">Landmark: {{ venue.landmark }}</p>
+                            <p class="mb-0">Website : <a href="{{ venue.website }}">{{ venue.website }}</a></p>
+                        </div>
+                        <div class="col-md-2" data-venue="{{ venue | myDitToJson }}">
+                            <a class="fas fa-edit text-center" style="padding-left: 11px;"
+                               id="miEditIconContactInfo"></a>
+                        </div>
+                    </div>
+                </div>
+
+                {#                <div class="col-sm-6 col-md-4" style="border: 1px solid red;">#}
+                {#                    <div class="mb-4" style="border: 1px solid red;">#}
+                {#                        <h4 class="h6">Contact Information</h4>#}
+                {#                        <p class="mb-0">Email: {{ venue.email }}</p>#}
+                {#                        <p class="mb-0">Phone Number: {{ venue.phone }}</p>#}
+                {#                        <p class="mb-0">Landline: {{ venue.landline }}</p>#}
+                {#                        <p class="mb-0">Landmark: {{ venue.landmark }}</p>#}
+                {#                        <p class="mb-0">Website : <a href="{{ venue.website }}">{{ venue.website }}</a></p>#}
+                {#                    </div>#}
+                {#                </div>#}
+            </div>
+        </div>
+        <!-- End Product Details Section -->
+
+        <hr class="my-0">
+
+        <!-- Shop Items Section -->
+        <div class="container-fluid space-2 space-md-2"
+             style="background-image: linear-gradient(150deg, #fec107 0%, #fb8585 100%);">
+            <!-- Title -->
+            <div class="text-center mb-6">
+                <h2 class="font-weight-normal">Add on
+                    <a class="btn text-primary btn-white transition-3d-hover" href="javascript:;" id="add_addon_btn"
+                       style=" float: right;">Addon
+                        <span class="fas fa-plus"></span> </a>
+                </h2>
+            </div>
+
+            <!-- End Title -->
+
+            <div class="row ml-6 mr-8">
+
+                {% for addon in venue.venue_addon %}
+                    <div class="col-sm-6 col-lg-4 mb-5">
+                        <div class="card card-body pt-4 pl-4 pr-2">
+                            <div class="row" data-object="{% convert_ordereddict_to_json addon %}">
+                                <div class="col-md-9">
+                                    <span class="d-block truncate h6">Item Name: <small>{{ addon.name }}</small></span>
+                                    <span class="d-block h6">Quantity: <small>{{ addon.count }}</small></span>
+                                    <span class="d-block h6">Price: <small>${{ addon.hourly_price }}</small></span>
+                                </div>
+                                <div class="col-3">
+                                    <a class="fas fa-trash-alt mr-2 addon_delete" href="javascript:;"></a>
+                                    <a class="fas fa-edit addon_edit" href="javascript:;"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <!-- End Shop Items Section -->
+
+        <!-- Subscribe Section -->
+        <div class="container-fluid space-2 space-md-2" style="background-color: #e7ecf5;">
+            <div class="row text-center mb-4">
+                <h2 class="h1 col-md-11 text-center"><span class="font-weight-semi-bold">Spaces</span></h2>
+                <div class="col-md-1"><a class="btn btn-primary transition-3d-hover float-right" id="addSpaceBtn">Add
+                    Spaces</a></div>
+            </div>
+            <div class="row container-fluid m-1">
+                {% for spaces in venue.venue_spaces %}
+                    <div class="col-md-4" style="margin-bottom: 10px;">
+                        <div class="card card-body">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <p>{{ spaces.name }}</p>
+                                </div>
+                                <div class="col-md-4" data-space="{{ spaces|dictToJson }}">
+                                    <a class="fas fa-trash-alt mr-5 space_del_icon" href="javascript:;"></a>
+                                    <a class="fas fa-edit space_edit_icon" href="javascript:;"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+        </div>
+
+        <!-- End Subscribe Section -->
+    </main>
+    <!-- ========== END MAIN CONTENT ========== -->
+    {% include 'npvenue/modal_addon.html' %}
+    {% include 'modal/space_edit_modal.html' %}
+    {% include 'modal/modal_contact_info.html' %}
+{% endblock %}
+
+{% block extra_js %}
+    <script src="{% static 'assets/js/venue_profile.js' %}"></script>
+    <script>
+    $(window).on('load', function () {
+      // initialization of HSMegaMenu component
+      $('.js-mega-menu').HSMegaMenu({
+        event: 'hover',
+        pageContainer: $('.container'),
+        breakpoint: 767.98,
+        hideTimeOut: 0
+      });
+
+      // initialization of svg injector module
+      $.HSCore.components.HSSVGIngector.init('.js-svg-injector');
+    });
+
+    $(document).on('ready', function () {
+
+      $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel');
+
+
+    });
+  </script>
+{% endblock %}
+

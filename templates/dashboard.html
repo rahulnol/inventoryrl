@@ -1,0 +1,12 @@
+{% extends 'base_dashboard.html' %}
+{% load staticfiles %}
+
+{% block title %}Dasboard{% endblock %}
+{% block sub_content %}
+    Hi this is dashboard page
+{% endblock %}
+
+{% block childExtraCss %}
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+
+{% endblock %}

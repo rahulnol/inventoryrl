@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MyPrac.html</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+<form>
+    <div class="form-group" style="border: 1px solid red;">
+        <label class="form-label" for="signinSrEmail">Email address</label>
+        <input type="email" class="form-control" name="email" id="signinSrEmail" placeholder="Email address"
+               aria-label="Email address" required
+               data-msg="Please enter a valid email address."
+               data-error-class="u-has-error"
+               data-success-class="u-has-success">
+
+        <div class="col-7 col-sm-6 text-right">
+            <button type="submit" class="btn btn-primary transition-3d-hover">Get Started</button>
+        </div>
+    </div>
+</form>
+
+<div style="border: 1px solid blueviolet;">
+    <label for="name">Name : </label><input type="text" id="name" class="form-control" required  aria-label="Email address"
+data-msg="Please enter a valid email address."
+               data-error-class="u-has-error"
+               data-success-class="u-has-success">
+</div>
+</body>
+
+</html>

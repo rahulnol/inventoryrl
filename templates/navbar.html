@@ -1,0 +1,37 @@
+{% load staticfiles %}
+<!-- ========== HEADER ========== -->
+<header id="header" class="u-header">
+
+
+    <div class="u-header__section" style="background-color: blue;s">
+        <div id="logoAndNav" class="p-2">
+            <!-- Nav -->
+            <!-- Logo -->
+            <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                <i class="fa fa-bars"></i>
+                <span class="sr-only">Toggle Menu</span>
+            </button>
+            <!-- End Logo -->
+            <b style="font-size: 1.5rem;vertical-align: middle;color: white;margin-left: 1rem;">TekSystems</b>
+            <!-- Links -->
+            <a id="sidebarNavToggler" class="btn btn-xs btn-icon btn-text-secondary mr-2 mt-2" href="javascript:;"
+               role="button" style="float: right"
+               aria-controls="sidebarContent"
+               aria-haspopup="true"
+               aria-expanded="false"
+               data-unfold-event="click"
+               data-unfold-hide-on-scroll="false"
+               data-unfold-target="#sidebarContent"
+               data-unfold-type="css-animation"
+               data-unfold-animation-in="fadeInRight"
+               data-unfold-animation-out="fadeOutRight"
+               data-unfold-duration="500">
+                <span class="fas fa-user-circle btn-icon__inner font-size-3 " style="color: white;"></span>
+            </a>
+            <!-- End Links -->
+
+            <!-- End Nav -->
+        </div>
+    </div>
+</header>
+<!-- ========== END HEADER ========== -->

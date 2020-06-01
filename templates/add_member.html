@@ -1,0 +1,83 @@
+{% extends 'base_dashboard.html' %}
+{% load staticfiles %}
+{% block title %}Add Member{% endblock %}
+
+
+
+{% block sub_content %}
+    <div class="mcMainPageDiv container" style="border: 0px solid black;">
+    <div class="mcHardwareTextDiv">
+        <div class="row">
+            <div class="col-md-10" style="border: 0px solid black">
+                <h5>Add New Member</h5>
+            </div>
+            <div class="col-md-1" style="border: 0px solid orange;">
+                <a href="{% url 'member' %}" class="btn miCancelBtn">CANCEL</a>
+            </div>
+            <div class="col-md-1 text-center" style="border: 0px solid blue">
+                <a href="{% url 'member' %}" class="btn btn-primary text-center" style="width: 80px;">SAVE</a>
+            </div>
+        </div>
+    </div>
+    <hr/>
+
+    <div class="mcFormDiv">
+        <div class="row">
+            <div class="col-md-7" style="border: 0px solid black">
+
+
+                <div class="row mcInnerFormRow">
+                    <div class="col-md-4" style="border: 0px solid black">
+                        <label class="mcLabel">First Name</label>
+                    </div>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="row mcInnerFormRow">
+
+                    <div class="col-md-4" style="border: 0px solid black">
+                        <label class="mcLabel">Last Name</label>
+                    </div>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="row mcInnerFormRow">
+                    <div class="col-md-4" style="border: 0px solid black">
+                        <label class="mcLabel">Email</label>
+                    </div>
+                    <div class="col-md-8">
+                        <input type="email" class="form-control">
+                    </div>
+                </div>
+                <div class="row mcInnerFormRow">
+                    <div class="col-md-4" style="border: 0px solid black">
+                        <label class="mcLabel">Phone</label>
+                    </div>
+                    <div class="col-md-8">
+                        <input type="email" class="form-control">
+                    </div>
+                </div>
+                <div class="row mcInnerFormRow">
+                    <div class="col-md-4" style="border: 0px solid black">
+                        <label class="mcLabel">Role</label>
+                    </div>
+                    <div class="col-md-8">
+                        <select class="form-control">
+                            <option>Staff User</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-5" style="border: 0px solid orange"></div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block childExtraCss %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/add_hardware.css' %}">
+
+{% endblock %}

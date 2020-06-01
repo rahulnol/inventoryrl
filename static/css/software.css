@@ -1,0 +1,43 @@
+::placeholder{
+    font-size: 15px !important;
+}
+input[placeholder]{
+    font-size: 15px;
+}
+
+.mcMainPageDiv {
+    border: 0px solid orange;
+    margin-top: 30px;
+}
+
+.mcSelectFilter {
+    height: 38px;
+    width: 180px;
+    border-radius: 5px;
+    margin-left: -15px;
+    padding: 4px;
+    /*background: blue;*/
+    /*color: whitesmoke;*/
+}
+
+.mcInputElement {
+    width: 332px;
+    border-radius: 0px;
+    margin-top: 3px;
+    height: 34px;
+}
+::placeholder {
+  color: blue;
+    font-size: 20px;
+    text-align: center;
+}
+
+.mcFilterDiv{
+    margin-top: 40px;
+    margin-bottom: 60px;
+    border: 0px solid orange;
+    padding-left: 12px;
+}
+.table-striped td{
+    color: black;
+}

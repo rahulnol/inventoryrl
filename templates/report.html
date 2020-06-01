@@ -1,0 +1,16 @@
+{% extends 'base_dashboard.html' %}
+{% load staticfiles %}
+{% block title %}Hardware{% endblock %}
+
+
+{% block sub_content %}
+    <div class="mcMainPageDiv">
+        <div class="mcHardwareTextDiv">This is Report Page</div>
+        <div class="mcAssingnInfoDiv"></div>
+        <div class="mcTwoItemDiv"></div>
+    </div>
+{% endblock %}
+
+{% block childExtraCss %}
+    <link rel="stylesheet" href="{% static 'css/report.css' %}">
+{% endblock %}

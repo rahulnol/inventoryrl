@@ -1,0 +1,25 @@
+.mcMainPageDiv {
+    border: 0px solid orange;
+    margin-top: 30px;
+}
+.miCancelBtn{
+    border: 1px solid grey;
+
+}
+.miCancelBtn:hover{
+    background: #3e64ff;
+    color: whitesmoke;
+    border: 1px solid #3e64ff;
+}
+.mcFormDiv{
+    margin-top: 30px;
+}
+
+.mcLabel{
+    margin-top: 4px;
+    margin-left: -10px;
+    font-size: 15px;
+}
+.mcFormDiv .mcInnerFormRow{
+    margin-bottom: 20px;
+}

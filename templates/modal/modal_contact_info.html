@@ -1,0 +1,50 @@
+<div class="modal" tabindex="-1" role="dialog" id="miContactInfoModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Contact Info</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="required-field text-center" id="miErrorDivResponse" style="display: none">Invalid VenueId</div>
+                <div class="form-group">
+                    <label for="miInputEmail">Email <span class="required-field">*</span></label>
+                    <input type="email" class="form-control mcInputContactInfoModal" id="miInputEmail"
+                           placeholder="Email">
+                    <div class="required-field" id="miDivEmailError" style="display: none">Invalid Email</div>
+                </div>
+                <div class="form-group">
+                    <label for="miInputPhone">PhoneNo <span class="required-field">*</span></label>
+                    <input type="number" class="form-control mcInputContactInfoModal" id="miInputPhone"
+                           placeholder="Max and Min 10 digits">
+                    <div class="required-field" id="miDivPhoneError" style="display: none">Invalid PhoneNo</div>
+                </div>
+                <div class="form-group">
+                    <label for="miInputLandLine">Landline</label>
+                    <input type="number" class="form-control mcInputContactInfoModal" id="miInputLandLine"
+                           placeholder="Max and Min 11 digits">
+                </div>
+                <div class="form-group">
+                    <label for="miInputLandmark">Landmark <span class="required-field">*</span></label>
+                    <input type="text" class="form-control mcInputContactInfoModal" id="miInputLandmark"
+                           placeholder="Landmark">
+                    <div class="required-field" id="miDivLandmarkError" style="display: none">Landmark required</div>
+                </div>
+                <div class="form-group">
+                    <label for="miInputWebsite">Website <span class="required-field">*</span></label>
+                    <input type="url" class="form-control mcInputContactInfoModal" id="miInputWebsite"
+                           placeholder="Website">
+                    <div class="required-field" id="miDivWebsiteError" style="display: none">Website required</div>
+                </div>
+                <input type="hidden" id="miVenueId">
+            </div>
+            <div class="modal-footer">
+                <span class="error" style="display: none">Please fill all required fields</span>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="miSaveBtnContactInfoModal">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
